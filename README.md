@@ -1,4 +1,4 @@
-# browser.js
+# Browser.js
 
 Browser.js Helps to write conditional css based on web browsers makes it easy to write conditional CSS _and/or_ JavaScript based on device operating system (iOS, Android, Blackberry, Windows, Firefox OS, MeeGo, AppleTV, etc), orientation (Portrait vs. Landscape), and type (Tablet vs. Mobile).
 
