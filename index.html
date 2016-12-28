@@ -1,0 +1,81 @@
+<html>
+  <head>
+    <title>Browser.js</title>
+    <link rel="stylesheet" href="css/font-awesome.css">
+  </head>
+  <body>
+    <style>
+      .status{
+        margin: 30px 0;
+      }
+      .active{
+        margin-top: 10px;
+      }
+      .active p{
+        color: green;
+        font-size: 24px;
+        margin: 15px 0;
+        display: inline-block;
+        padding-left: 20px;
+      }
+      .active span{
+        padding: 10px 20px;
+        vertical-align: super;
+        background-color: green;
+        border-radius: 3px;
+      }
+      .disable{
+        margin-top: 10px;
+      }
+      .disable p{
+        color: gray;
+        font-size: 24px;
+        margin: 15px 0;
+        display: inline-block;
+        padding-left: 20px;
+      }
+      .disable span{
+        padding: 10px 20px;
+        vertical-align: super;
+        background-color: gray;
+        border-radius: 3px;
+      }
+      .browser {
+        color: gray;
+        padding: 50px 30px;
+        font-size: 40px;
+      }
+      .opera .browser.opera,
+      .chrome .browser.chrome,
+      .safari .browser.safari,
+      .firefox .browser.firefox,
+      .ie .browser.ie,
+      .unknow .browser.unknow {
+        color: green
+      }
+    </style>
+    <div class="status">
+      <div class="active"><span></span> <p>Current</p></div>
+      <div class="disable"><span></span> <p>Not...</p></div>
+    </div>
+    <span class="browser opera" title="Opera"><span class="fa fa-opera" aria-hidden="true"></span></span>
+    <span class="browser chrome" title="Chome"><span class="fa fa-chrome" aria-hidden="true"></span></span>
+    <span class="browser safari" title="Safari"><span class="fa fa-safari" aria-hidden="true"></span></span>
+    <span class="browser firefox" title="Firefox"><span class="fa fa-firefox" aria-hidden="true"></span></span>
+    <span class="browser ie" title="IE"><span class="fa fa-internet-explorer" aria-hidden="true"></span></span>
+    <span class="browser unknown" title="Unknown"><span class="fa fa-question" aria-hidden="true"></span></span>
+    <footer>
+      <script src="browser.js"></script>
+      <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-89549401-1', 'auto');
+        ga('send', 'pageview');
+
+      </script>
+    </footer>
+  </body>
+</html>
