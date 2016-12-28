@@ -57,3 +57,13 @@ Just include the script. in window.load  the `<html>` tag will be updated with t
 ``` html
 <script src="browser.js"></script>
 ```
+
+By default js-classes are disable (it means the `<html>` wont display the js- class); to enable this, just change:
+
+```js
+  var js = false;
+```
+With
+```js
+  var js = true;
+```
