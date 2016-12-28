@@ -46,7 +46,7 @@ Browser.js inserts CSS classes into the `<html>` element.
 
 * Safari
 * Chrome
-* Mozilla
+* Firefox
 * Opera
 * IE
 
