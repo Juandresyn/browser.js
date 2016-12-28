@@ -1,8 +1,9 @@
 (function(){
 
   'use strict'
-  
+
   var js = false;
+  var el = window.document.documentElement;
   var classes = {
         css: {
           opera: 'opera',
@@ -10,6 +11,7 @@
           safari: 'safari',
           firefox: 'firefox',
           ie: 'ie',
+          edge: 'edge',
           unknown: 'unknown'
         },
         js: {
@@ -18,6 +20,7 @@
           safari: 'js-safari',
           firefox: 'js-firefox',
           ie: 'js-ie',
+          edge: 'js-edge',
           unknown: 'js-unknown'
         }
       };
@@ -25,37 +28,45 @@
   function detectBrowser() {
     var is;
     var jsIs;
+    var browser = navigator.userAgent;
+    var _css = classes.css;
+    var _js = classes.js;
 
-    if((navigator.userAgent.indexOf("Opera") || navigator.userAgent.indexOf('OPR')) != -1 ) {
-      jsIs = ((js) ? classes.js.opera : "");
-      is = classes.css.opera + " " + jsIs;
-    }else if(navigator.userAgent.indexOf("Chrome") != -1 ){
-      jsIs = ((js) ? classes.js.chrome : "");
-      is = classes.css.chrome + " " + jsIs;
-    }else if(navigator.userAgent.indexOf("Safari") != -1){
-      jsIs = ((js) ? classes.js.safari : "");
-      is = classes.css.safari + " " + jsIs;
-    }else if(navigator.userAgent.indexOf("Firefox") != -1 ) {
-      jsIs = ((js) ? classes.js.firefox : "");
-      is = classes.css.firefox + " " + jsIs;
-    }else if((navigator.userAgent.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )){
+    if(browser.indexOf("Chrome") != -1 ){
+      if(browser.indexOf('OPR') != -1 ) {
+        // Opera uses Chrome as it's engine, so, check it under Chrome's userAgent.
+        jsIs = ((js) ? " " + _js.opera: "");
+        is = _css.opera + jsIs;
+      }else if(browser.indexOf('Edge') != -1 ) {
+        jsIs = ((js) ? " " + _js.edge: "");
+        is = _css.edge + jsIs;
+      }else{
+        jsIs = ((js) ? " " + _js.chrome: "");
+        is = _css.chrome + jsIs;
+      }
+    }else if(browser.indexOf("Safari") != -1){
+      jsIs = ((js) ? " " + _js.safari: "");
+      is = _css.safari + jsIs;
+    }else if(browser.indexOf("Firefox") != -1 ) {
+      jsIs = ((js) ? " " + _js.firefox: "");
+      is = _css.firefox + jsIs;
+    }else if((browser.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )){
       // If IE > 10
-      jsIs = ((js) ? classes.js.ie : "");
-      is = classes.css.ie + " " + jsIs;
+      jsIs = ((js) ? " " + _js.ie: "");
+      is = _css.ie + jsIs;
     }else {
-      jsIs = ((js) ? classes.js.unknown : "");
-      is = classes.css.unknown + " " + jsIs;
+      jsIs = ((js) ? " " + _js.unknown: "");
+      is = _css.unknown + jsIs;
     }
 
     return is;
   }
 
   function browser() {
-    var el = window.document.documentElement;
     var classString = el.className;
     var newClass = classString.concat(" " + detectBrowser());
     el.className = newClass;
   }
 
-  window.onload = setTimeout(browser, 1000);
+  window.onload = setTimeout(browser, 500);
 })();

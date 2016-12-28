@@ -2,11 +2,14 @@
   <head>
     <title>Browser.js</title>
     <link rel="stylesheet" href="css/font-awesome.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
   <body>
     <style>
       .status{
         margin: 30px 0;
+        display: flex;
+        justify-content: space-around;
       }
       .active{
         margin-top: 10px;
@@ -40,16 +43,39 @@
         background-color: gray;
         border-radius: 3px;
       }
+      .browser-list {
+        display: -webkit-box;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
       .browser {
         color: gray;
-        padding: 50px 30px;
+        padding: 15px 0;
         font-size: 40px;
+        display: inline-block;
+        text-align: center;
+        display: block;
+        width: 130px;
+      }
+      .browser:hover{
+        color: #3c2163;
+        cursor: pointer;
+      }
+      .browser p{
+        margin: 10px 0;
+        font-size: 18px;
+        font-family: sans-serif;
+        text-transform: uppercase;
       }
       .opera .browser.opera,
       .chrome .browser.chrome,
       .safari .browser.safari,
       .firefox .browser.firefox,
       .ie .browser.ie,
+      .edge .browser.edge,
       .unknow .browser.unknow {
         color: green
       }
@@ -58,14 +84,38 @@
       <div class="active"><span></span> <p>Current</p></div>
       <div class="disable"><span></span> <p>Not...</p></div>
     </div>
-    <span class="browser opera" title="Opera"><span class="fa fa-opera" aria-hidden="true"></span></span>
-    <span class="browser chrome" title="Chome"><span class="fa fa-chrome" aria-hidden="true"></span></span>
-    <span class="browser safari" title="Safari"><span class="fa fa-safari" aria-hidden="true"></span></span>
-    <span class="browser firefox" title="Firefox"><span class="fa fa-firefox" aria-hidden="true"></span></span>
-    <span class="browser ie" title="IE"><span class="fa fa-internet-explorer" aria-hidden="true"></span></span>
-    <span class="browser unknown" title="Unknown"><span class="fa fa-question" aria-hidden="true"></span></span>
+    <div class="browser-list">
+      <span class="browser opera" title="Opera">
+        <span class="fa fa-opera" aria-hidden="true"></span>
+        <p>Opera</p>
+      </span>
+      <span class="browser chrome" title="Chome">
+        <span class="fa fa-chrome" aria-hidden="true"></span>
+        <p>Chrome</p>
+      </span>
+      <span class="browser safari" title="Safari">
+        <span class="fa fa-safari" aria-hidden="true"></span>
+        <p>Safari</p>
+      </span>
+      <span class="browser firefox" title="Firefox">
+        <span class="fa fa-firefox" aria-hidden="true"></span>
+        <p>Firefox</p>
+      </span>
+      <span class="browser ie" title="IE">
+        <span class="fa fa-internet-explorer" aria-hidden="true"></span>
+        <p>Ie</p>
+      </span>
+      <span class="browser edge" title="Edge">
+        <span class="fa fa-edge" aria-hidden="true"></span>
+        <p>Edge</p>
+      </span>
+      <span class="browser unknown" title="Unknown">
+        <span class="fa fa-question" aria-hidden="true"></span>
+        <p>Unknown</p>
+      </span>
+    </div>
     <footer>
-      <script src="browser.js"></script>
+      <script src="src/browser.js"></script>
       <script>
         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
