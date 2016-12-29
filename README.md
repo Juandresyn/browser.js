@@ -75,7 +75,7 @@ With
   var js = true;
 ```
 
-You can change the brwosers classes as you want/need by modifing the classed obj.
+You can change the browsers classes as you want/need by modifing the classes obj.
 ```js
   var classes = {
         css: {
