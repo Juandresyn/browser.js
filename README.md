@@ -41,6 +41,13 @@ Browser.js inserts CSS classes into the `<html>` element.
   <html class="ie js-ie"></html>
 ``` 
 
+#### Edge
+
+
+``` html
+  <html class="edge js-edge"></html>
+``` 
+
 ###  BROWSERS
 
 * Safari
@@ -48,6 +55,7 @@ Browser.js inserts CSS classes into the `<html>` element.
 * Firefox
 * Opera
 * IE
+* Edge
 
 ### USAGE
 
@@ -66,3 +74,27 @@ With
 ```js
   var js = true;
 ```
+
+You can change the brwosers classes as you want/need by modifing the classed obj.
+```js
+  var classes = {
+        css: {
+          opera: 'opera',
+          chrome: 'chrome',
+          safari: 'safari',
+          firefox: 'firefox',
+          ie: 'ie',
+          edge: 'edge',
+          unknown: 'unknown'
+        },
+        js: {
+          opera: 'js-opera',
+          chrome: 'js-chrome',
+          safari: 'js-safari',
+          firefox: 'js-firefox',
+          ie: 'js-ie',
+          edge: 'js-edge',
+          unknown: 'js-unknown'
+        }
+      };
+``` 
