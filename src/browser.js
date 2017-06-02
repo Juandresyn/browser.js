@@ -53,8 +53,8 @@
       jsIs = ((js) ? " " + _js.firefox: "");
       is = _css.firefox + jsIs;
     }else if(browser.indexOf("FBAN") != -1 || browser.indexOf("FBAV") > -1) {
-      jsIs = ((js) ? " " + _js.firefox: "");
-      is = _css.firefox + jsIs;
+      jsIs = ((js) ? " " + _js.facebook: "");
+      is = _css.facebook + jsIs;
     }else if((browser.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )){
       // If IE > 10
       jsIs = ((js) ? " " + _js.ie: "");
