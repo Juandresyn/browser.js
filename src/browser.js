@@ -10,6 +10,7 @@
           chrome: 'chrome',
           safari: 'safari',
           firefox: 'firefox',
+          facebook: 'facebook',
           ie: 'ie',
           edge: 'edge',
           unknown: 'unknown'
@@ -19,6 +20,7 @@
           chrome: 'js-chrome',
           safari: 'js-safari',
           firefox: 'js-firefox',
+          facebook: 'js-facebook',
           ie: 'js-ie',
           edge: 'js-edge',
           unknown: 'js-unknown'
@@ -48,6 +50,9 @@
       jsIs = ((js) ? " " + _js.safari: "");
       is = _css.safari + jsIs;
     }else if(browser.indexOf("Firefox") != -1 ) {
+      jsIs = ((js) ? " " + _js.firefox: "");
+      is = _css.firefox + jsIs;
+    }else if(browser.indexOf("FBAN") != -1 || browser.indexOf("FBAV") > -1) {
       jsIs = ((js) ? " " + _js.firefox: "");
       is = _css.firefox + jsIs;
     }else if((browser.indexOf("MSIE") != -1 ) || (!!document.documentMode == true )){
